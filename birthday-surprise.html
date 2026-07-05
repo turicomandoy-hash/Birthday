@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Happy Birthday, My Special Person 💗</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="style.css">  
+
+</head>
+<body>
+
+<!-- ============ WELCOME SCREEN ============ -->
+<div id="welcome" class="screen">
+  <div class="deco-layer" id="welcomeDeco"></div>
+  <button class="music-toggle" id="musicBtn">🔇 Music</button>
+  <div class="welcome-card">
+    <h1 class="welcome-title">Happy Birthday,<br>My Special Person 💗✨</h1>
+    <p class="welcome-sub">a little magic, just for you...</p>
+    <button class="enter-btn" id="enterBtn">Open My Surprise 🎁</button>
+  </div>
+</div>
+
+<!-- ============ LOGIN SCREEN ============ -->
+<div id="login" class="screen hidden">
+  <div class="deco-layer" id="loginDeco"></div>
+  <div class="login-card">
+    <div class="login-heart">💖</div>
+    <h2>A Secret Just For You</h2>
+    <p>Enter your birthday password 💕</p>
+    <input type="text" id="pwInput" class="pw-input" placeholder="MM/DD/YYYY">
+    <button class="unlock-btn" id="unlockBtn">Unlock My Surprise 💖</button>
+    <div class="error-msg" id="errorMsg">That's not quite it... try again, my love 💗</div>
+  </div>
+</div>
+
+<!-- ============ GALAXY TRAVEL ============ -->
+<div id="travel" class="screen hidden">
+  <canvas id="warpCanvas"></canvas>
+  <div class="vignette"></div>
+  <div class="warp-flash" id="warpFlash"></div>
+  <div class="travel-text" id="travelText"></div>
+</div>
+
+<!-- ============ GALAXY CHOICE 3D ============ -->
+<div id="choice" class="screen hidden">
+  <canvas id="galaxyCanvas"></canvas>
+  <div class="choice-hud">
+    <div class="choice-title">Choose Your Galaxy 🌌</div>
+    <div class="choice-sub">Drag to explore all directions &bull; Tap a galaxy to open its secret</div>
+  </div>
+  <div id="galaxyLabels"></div>
+  <div class="drag-hint">✦ drag to rotate 360° ✦</div>
+  <div class="galaxy-select-flash" id="galaxyFlash"></div>
+</div>
+
+<!-- ============ LETTER SCREEN ============ -->
+<div id="letterScreen" class="screen hidden">
+  <div class="deco-layer" id="letterDeco"></div>
+
+  <div id="envelopeWrap" class="envelope-wrap">
+    <div class="envelope" id="envelope">
+      <div class="env-body">
+        <div class="env-acc l"></div>
+        <div class="env-acc r"></div>
+      </div>
+      <div class="env-glow"></div>
+      <div class="env-flap" id="envFlap"></div>
+      <div class="env-seal" id="envSeal">💌</div>
+    </div>
+    <div class="tap-hint" id="tapHint">✦ tap to unseal ✦</div>
+  </div>
+
+  <div class="letter-card" id="letterCard">
+    <div class="lc-topbar"></div>
+    <div class="lc-corner tl"></div><div class="lc-corner tr"></div>
+    <div class="lc-corner bl"></div><div class="lc-corner br"></div>
+    <div class="lc-scroll">
+      <div class="lc-header">
+        <span class="lc-icon" id="letterIcon">🌙</span>
+        <div class="lc-title" id="letterTitle">Memories Galaxy</div>
+      </div>
+      <div class="lc-rule">✦ · · · · · ✦</div>
+      <div class="letter-text" id="letterText"></div>
+      <div class="lc-btns">
+        <button class="back-btn" id="backBtn">← Galaxies</button>
+        <button class="continue-btn" id="continueBtn">Continue 💘</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ COURT QUESTION SCREEN ============ -->
+<div id="courtScreen" class="screen hidden">
+  <div class="deco-layer" id="courtDeco"></div>
+  <div class="court-card" id="courtForm">
+    <div class="big-heart">💘</div>
+    <h2>One Last Question...</h2>
+    <p class="sub">May I court you? 💕</p>
+
+    <div class="yn-row">
+      <button class="yn-btn yes" id="yesBtn" type="button">Yes 💖</button>
+      <button class="yn-btn no" id="noBtn" type="button">No 💔</button>
+    </div>
+
+    <div style="text-align:left;">
+      <div class="feedback-label">Leave me a little message 💌</div>
+      <textarea class="feedback-box" id="feedbackBox" placeholder="Tell me what's on your mind..."></textarea>
+    </div>
+
+    <button class="submit-btn" id="submitBtn" disabled>Send My Answer 💌</button>
+    <div class="court-status" id="courtStatus"></div>
+  </div>
+
+  <div class="court-card court-thanks" id="courtThanks">
+    <div class="big-heart">🥹💗</div>
+    <h2 id="thanksTitle">Thank you!</h2>
+    <p id="thanksSub">Your answer means everything to me.</p>
+  </div>
+</div>
+
+
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_d1718ab41b.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<script src="index.js"></script>
+</body>
+</html>
